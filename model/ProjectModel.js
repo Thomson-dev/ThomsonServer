@@ -19,7 +19,7 @@ const projectSchema = new mongoose.Schema({
   },
 image: { 
     type: String, 
-    required: fasle
+    required: false
 }
 });
 
