@@ -14,6 +14,8 @@ const ExperienceController = asyncHandler(async (req, res) => {
     });
 
     const createdExperience = await ExperienceDetail.save();
+
+    
     res.status(201).json(createdExperience);
   } catch (error) {
     console.error("Error creating user:", error.message);

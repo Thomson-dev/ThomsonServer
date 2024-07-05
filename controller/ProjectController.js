@@ -19,6 +19,7 @@ const createProject = asyncHandler(async (req, res) => {
         description,
         image: uploadedResponse.url
       });
+      clg(userProject)
     
       const createdProject = await userProject.save();
       res.status(201).json(createdProject);
