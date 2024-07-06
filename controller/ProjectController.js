@@ -3,7 +3,7 @@ import asyncHandler from "express-async-handler";
 import cloudinary from "../cloudinary/cloudinary.js";
 
 const createProject = asyncHandler(async (req, res) => {
-    const { name,description, category, image } = req.body;
+    const { name,description, link, category, image } = req.body;
     try {
       let uploadedResponse = null;
       if (image) {
@@ -15,11 +15,12 @@ const createProject = asyncHandler(async (req, res) => {
     
       const userProject = new Project({
         name,
+        link,
         category,
         description,
-        image: uploadedResponse.url
+        image: uploadedResponse.url 
       });
-      clg(userProject)
+      // console.log(userProject)
     
       const createdProject = await userProject.save();
       res.status(201).json(createdProject);

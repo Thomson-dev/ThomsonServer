@@ -12,10 +12,13 @@ const projectSchema = new mongoose.Schema({
     required: false,
     
   },
+  link: {
+    type: String,
+    required: true,
+  },
   category: {
     type: String,
     required: true,
-    
   },
 image: { 
     type: String, 
